@@ -1,0 +1,6 @@
+framework module Pods_MVPBlahUITests {
+  umbrella header "Pods-MVPBlahUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
