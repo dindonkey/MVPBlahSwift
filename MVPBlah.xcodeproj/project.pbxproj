@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		81C1BE05C807E56929774734 /* Pods_MVPBlahTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09E53E5CF9AB467A936748A /* Pods_MVPBlahTests.framework */; };
+		A93FE6A01E63103C006EF079 /* SchedulerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93FE69F1E63103C006EF079 /* SchedulerManager.swift */; };
+		A93FE6A11E63103C006EF079 /* SchedulerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93FE69F1E63103C006EF079 /* SchedulerManager.swift */; };
+		A93FE6A21E63103C006EF079 /* SchedulerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93FE69F1E63103C006EF079 /* SchedulerManager.swift */; };
 		A964DC2C1E622974002FD56B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A964DC2B1E622974002FD56B /* AppDelegate.swift */; };
 		A964DC2E1E622974002FD56B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A964DC2D1E622974002FD56B /* ViewController.swift */; };
 		A964DC311E622974002FD56B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A964DC2F1E622974002FD56B /* Main.storyboard */; };
@@ -42,6 +45,7 @@
 		320941562F9E7E8BA6688FDE /* Pods_MVPBlah.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVPBlah.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E999FCF47A43AF130DBC777 /* Pods-MVPBlahUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVPBlahUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVPBlahUITests/Pods-MVPBlahUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8B935AEE6C71A452DD408846 /* Pods-MVPBlah.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVPBlah.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVPBlah/Pods-MVPBlah.debug.xcconfig"; sourceTree = "<group>"; };
+		A93FE69F1E63103C006EF079 /* SchedulerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchedulerManager.swift; sourceTree = "<group>"; };
 		A964DC281E622974002FD56B /* MVPBlah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVPBlah.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A964DC2B1E622974002FD56B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A964DC2D1E622974002FD56B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 				A964DC321E622974002FD56B /* Assets.xcassets */,
 				A964DC341E622974002FD56B /* LaunchScreen.storyboard */,
 				A964DC371E622974002FD56B /* Info.plist */,
+				A93FE69F1E63103C006EF079 /* SchedulerManager.swift */,
 			);
 			path = MVPBlah;
 			sourceTree = "<group>";
@@ -447,6 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A964DC2E1E622974002FD56B /* ViewController.swift in Sources */,
+				A93FE6A01E63103C006EF079 /* SchedulerManager.swift in Sources */,
 				A964DC2C1E622974002FD56B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,6 +462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A964DC411E622974002FD56B /* MVPBlahTests.swift in Sources */,
+				A93FE6A11E63103C006EF079 /* SchedulerManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +471,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A964DC4C1E622974002FD56B /* MVPBlahUITests.swift in Sources */,
+				A93FE6A21E63103C006EF079 /* SchedulerManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -698,6 +706,7 @@
 				A964DC521E622974002FD56B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A964DC531E622974002FD56B /* Build configuration list for PBXNativeTarget "MVPBlahTests" */ = {
 			isa = XCConfigurationList;
@@ -706,6 +715,7 @@
 				A964DC551E622974002FD56B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A964DC561E622974002FD56B /* Build configuration list for PBXNativeTarget "MVPBlahUITests" */ = {
 			isa = XCConfigurationList;
@@ -714,6 +724,7 @@
 				A964DC581E622974002FD56B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
