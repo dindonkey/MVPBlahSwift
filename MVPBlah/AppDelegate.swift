@@ -19,9 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let schedulerManager: SchedulerManager
         
-        //TODO: come si fa un immediate scheduler ???
         if useImmediateSchedulers {
-            schedulerManager = SchedulerManager(computation: ConcurrentDispatchQueueScheduler(qos: .default), main:MainScheduler())
+            schedulerManager = SchedulerManager(computation: MainScheduler(), main:MainScheduler())
         }
         else
         {
