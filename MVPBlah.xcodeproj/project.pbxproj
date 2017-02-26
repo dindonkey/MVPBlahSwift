@@ -18,6 +18,8 @@
 		A964DC361E622974002FD56B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A964DC341E622974002FD56B /* LaunchScreen.storyboard */; };
 		A964DC411E622974002FD56B /* MVPBlahTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A964DC401E622974002FD56B /* MVPBlahTests.swift */; };
 		A964DC4C1E622974002FD56B /* MVPBlahUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A964DC4B1E622974002FD56B /* MVPBlahUITests.swift */; };
+		A9AC72E01E6386B000E19BE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A964DC2B1E622974002FD56B /* AppDelegate.swift */; };
+		A9AC72E11E6386B000E19BE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A964DC2B1E622974002FD56B /* AppDelegate.swift */; };
 		BB044FDBFD7D894BDEED6D32 /* Pods_MVPBlah.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320941562F9E7E8BA6688FDE /* Pods_MVPBlah.framework */; };
 		C93F84CB1837F4AA17998004 /* Pods_MVPBlahUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA03DC94CB670847739C352 /* Pods_MVPBlahUITests.framework */; };
 /* End PBXBuildFile section */
@@ -461,6 +463,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9AC72E01E6386B000E19BE2 /* AppDelegate.swift in Sources */,
 				A964DC411E622974002FD56B /* MVPBlahTests.swift in Sources */,
 				A93FE6A11E63103C006EF079 /* SchedulerManager.swift in Sources */,
 			);
@@ -470,6 +473,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9AC72E11E6386B000E19BE2 /* AppDelegate.swift in Sources */,
 				A964DC4C1E622974002FD56B /* MVPBlahUITests.swift in Sources */,
 				A93FE6A21E63103C006EF079 /* SchedulerManager.swift in Sources */,
 			);

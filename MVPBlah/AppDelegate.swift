@@ -13,7 +13,7 @@ import RxSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
+    static let USE_IMMEDIATE_SCHEDULERS = "USE_IMMEDIATE_SCHEDULERS"
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private var useImmediateSchedulers: Bool {
-        return ProcessInfo.processInfo.environment["USE_IMMEDIATE_SCHEDULERS"] == "YES"
+        return ProcessInfo.processInfo.environment[AppDelegate.USE_IMMEDIATE_SCHEDULERS] == "YES"
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

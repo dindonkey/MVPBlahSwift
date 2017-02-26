@@ -29,7 +29,7 @@ class MVPBlahUITests: XCTestCase {
     }
     
     func testLoadedDataIsShow() {
-        app.launchEnvironment["USE_IMMEDIATE_SCHEDULERS"] = "YES"
+        app.launchEnvironment[AppDelegate.USE_IMMEDIATE_SCHEDULERS] = "YES"
         app.launch()
 
         XCTAssert(app.staticTexts["Meh"].exists)
