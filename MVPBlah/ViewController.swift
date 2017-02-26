@@ -11,11 +11,13 @@ import RxSwift
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    var schedulerManager: SchedulerManager?
+    
     @IBOutlet var sampleTableView: UITableView!
+    
     let textCellIdentifier = "TextCell"
     var tableData = ["loading"]
     let disposeBag = DisposeBag()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,10 +30,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func getData() {
         
-        let schedulerManager = SchedulerManager(computation: ConcurrentDispatchQueueScheduler(qos: .default),
-            main:MainScheduler())
-        
-        
         let observable = Observable<String>.create { (observer) -> Disposable in
             Thread.sleep(forTimeInterval: 3)
             observer.onNext("Meh")
@@ -40,8 +38,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
         observable
-            .subscribeOn(schedulerManager.computation)
-            .observeOn(schedulerManager.main)
+            .subscribeOn((schedulerManager?.computation)!)
+            .observeOn((schedulerManager?.main)!)
             .subscribe(onNext: { (element) in
                 self.tableData = [element]
                 self.sampleTableView.reloadData()
