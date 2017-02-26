@@ -16,15 +16,23 @@ class MVPBlahUITests: XCTestCase {
         super.setUp()
         
         continueAfterFailure = false
-        app.launch()
     }
     
     override func tearDown() {
         super.tearDown()
     }
     
-    func testExample() {
+    func testLoadingIsShown() {
+        app.launch()
+        
         XCTAssert(app.staticTexts["loading"].exists)
+    }
+    
+    func testLoadedDataIsShow() {
+        app.launchEnvironment["USE_IMMEDIATE_SCHEDULERS"] = "YES"
+        app.launch()
+
+        XCTAssert(app.staticTexts["meh"].exists)
     }
     
 }

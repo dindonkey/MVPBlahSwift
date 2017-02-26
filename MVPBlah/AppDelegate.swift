@@ -17,13 +17,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        let schedulerManager = SchedulerManager(computation: ConcurrentDispatchQueueScheduler(qos: .default), main:MainScheduler())
+        let schedulerManager: SchedulerManager
+        
+        //TODO: come si fa un immediate scheduler ???
+        if useImmediateSchedulers {
+            schedulerManager = SchedulerManager(computation: ConcurrentDispatchQueueScheduler(qos: .default), main:MainScheduler())
+        }
+        else
+        {
+           schedulerManager = SchedulerManager(computation: ConcurrentDispatchQueueScheduler(qos: .default), main:MainScheduler())
+        }
         
         if let firstViewController = window?.rootViewController as? ViewController {
             firstViewController.schedulerManager = schedulerManager
         }
         
         return true
+    }
+    
+    private var useImmediateSchedulers: Bool {
+        return ProcessInfo.processInfo.environment["USE_IMMEDIATE_SCHEDULERS"] == "YES"
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
