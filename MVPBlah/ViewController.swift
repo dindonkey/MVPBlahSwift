@@ -13,7 +13,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet var sampleTableView: UITableView!
     let textCellIdentifier = "TextCell"
-    let tableData = ["loading"]
+    var tableData = ["loading"]
+    let disposeBag = DisposeBag()
     
     
     override func viewDidLoad() {
@@ -22,6 +23,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         sampleTableView.delegate = self
         sampleTableView.dataSource = self
         
+        getData()
+    }
+    
+    func getData() {
+        let observable = Observable<String>.create { (observer) -> Disposable in
+            Thread.sleep(forTimeInterval: 3)
+            observer.onNext("Meh")
+            observer.onCompleted()
+            return Disposables.create()
+        }
+        
+        observable
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .default))
+            .observeOn(MainScheduler())
+            .subscribe(onNext: { (element) in
+                self.tableData = [element]
+                self.sampleTableView.reloadData()
+            })
+            .addDisposableTo(disposeBag)
         
     }
     
