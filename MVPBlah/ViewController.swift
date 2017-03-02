@@ -39,11 +39,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 .observeOn((schedulerManager?.main)!)
                 .subscribe(onNext: { (element) in
                     let respDict = element as! Dictionary<String, AnyObject>
-//TODO: parsing del json
+                    let jokes = respDict["value"] as! Array<AnyObject>
 
-//                    let xxx = respDict["value"] as! Array<AnyObject>
-
-                    let joke = Joke(respDict["value"] as! Dictionary<String, AnyObject>)
+                    let joke = Joke(jokes.first as! Dictionary<String,AnyObject>)
                     self.tableData = [joke.joke]
                     self.sampleTableView.reloadData()
                 })

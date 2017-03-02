@@ -1,4 +1,5 @@
 PODS:
+  - MockWebServer (0.1.4)
   - RxBlocking (3.2.0):
     - RxSwift (~> 3.1)
   - RxCocoa (3.2.0):
@@ -8,17 +9,19 @@ PODS:
     - RxSwift (~> 3.0)
 
 DEPENDENCIES:
+  - MockWebServer
   - RxBlocking (~> 3.0)
   - RxCocoa (~> 3.0)
   - RxSwift (~> 3.0)
   - RxTest (~> 3.0)
 
 SPEC CHECKSUMS:
+  MockWebServer: 7993c8a2a00e796619b05efaa211ee609b0c653e
   RxBlocking: ec8ed471ba77b4fb98a2d60f1f8419b0b46eaa23
   RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
   RxTest: 85fdd6f753e8e62635a58d37bbdd3ce7d5abbef3
 
-PODFILE CHECKSUM: 37aba5ad5f2b3f6ad751b65fa8b78bf4cdf92fcb
+PODFILE CHECKSUM: bb6092e60091e0ae3ea60e7badca9d8af5e2e834
 
 COCOAPODS: 1.2.0

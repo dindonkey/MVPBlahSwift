@@ -8,17 +8,19 @@
 
 import UIKit
 import RxSwift
+import MockWebServer
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     static let USE_IMMEDIATE_SCHEDULERS = "USE_IMMEDIATE_SCHEDULERS"
+    var mockWebServer: MockWebServer?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         let schedulerManager: SchedulerManager
-        
+
         if useImmediateSchedulers {
             schedulerManager = SchedulerManager(computation: MainScheduler(), main:MainScheduler())
         }
@@ -26,7 +28,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         {
            schedulerManager = SchedulerManager(computation: ConcurrentDispatchQueueScheduler(qos: .default), main:MainScheduler())
         }
-        
+
+        mockWebServer = MockWebServer()
+        mockWebServer!.start(9000)
+
+        let jokesDispatch: Dispatch = Dispatch()
+        jokesDispatch.requestContain("random")
+                .setResponseCode(200)
+                .responseBody(for: Bundle(for: object_getClass(self)), fromFile: "jokes.json")
+
+        let dispatchMap = DispatchMap()
+        dispatchMap.add(jokesDispatch)
+        mockWebServer!.setDispatch(dispatchMap)
+
         if let firstViewController = window?.rootViewController as? ViewController {
             firstViewController.schedulerManager = schedulerManager
         }
@@ -58,6 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        mockWebServer!.stop()
     }
     
     
