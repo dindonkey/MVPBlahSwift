@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, JokesView {
 
     var schedulerManager: SchedulerManager?
 
@@ -26,7 +26,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         sampleTableView.dataSource = self
 
 //        getData()
-        getDataFromJokesRepo()
+//        getDataFromJokesRepo()
+
+        let jokesPresenter = JokesPresenter(jokesRepository: JokesRepository(), schedulerManager: schedulerManager!)
+        jokesPresenter.bindView(view: self)
+        jokesPresenter.getJokes()
 
 
     }
@@ -41,7 +45,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     let respDict = element as! Dictionary<String, AnyObject>
                     let jokes = respDict["value"] as! Array<AnyObject>
 
-                    let joke = Joke(jokes.first as! Dictionary<String,AnyObject>)
+                    let joke = Joke(jokes.first as! Dictionary<String, AnyObject>)
                     self.tableData = [joke.joke]
                     self.sampleTableView.reloadData()
                 })
@@ -85,6 +89,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.textLabel?.text = tableData[row]
 
         return cell
+    }
+
+    func showJokes(joke: Joke) {
+        self.tableData = [joke.joke]
+        self.sampleTableView.reloadData()
     }
 
 
