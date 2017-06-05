@@ -11,11 +11,17 @@ import RxSwift
 import RxCocoa
 
 class JokesRepository {
+    
+    var baseUrl : String
+    
+    init(_ baseUrl: String) {
+        self.baseUrl = baseUrl
+    }
 
     func getJoke() -> Observable<Any> {
 
         Thread.sleep(forTimeInterval: 3)
-        return URLSession.shared.rx.json(url: URL(string: "https://api.icndb.com/jokes/random/1")!)
+        return URLSession.shared.rx.json(url: URL(string: baseUrl + "/jokes/random/1")!)
 
 //        return Observable<String>.create { observer in
 //

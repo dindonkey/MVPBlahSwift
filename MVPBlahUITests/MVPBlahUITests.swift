@@ -7,28 +7,46 @@
 //
 
 import XCTest
+import MockWebServer
 
 class MVPBlahUITests: XCTestCase {
     
     let app = XCUIApplication()
-    
+    var mockWebServer: MockWebServer?
+
+
     override func setUp() {
         super.setUp()
-        
         continueAfterFailure = false
+
+        mockWebServer = MockWebServer()
+        mockWebServer!.start(9000)
     }
     
     override func tearDown() {
         super.tearDown()
+        mockWebServer!.stop()
     }
-    
-    func testLoadingIsShown() {
-        app.launch()
-        
-        XCTAssert(app.staticTexts["loading"].exists)
-    }
+
+    //non ha più senso, in teoria se usi immediate non vedi lo stato di caricamento
+//    func testLoadingIsShown() {
+//        app.launch()
+//
+//        XCTAssert(app.staticTexts["loading"].exists)
+//    }
     
     func testLoadedDataIsShow() {
+
+        let jokesDispatch: Dispatch = Dispatch()
+        jokesDispatch.requestContain("random")
+                .setResponseCode(200)
+                .responseBody(for: Bundle(for: object_getClass(self)), fromFile: "jokes.json")
+
+        let dispatchMap = DispatchMap()
+        dispatchMap.add(jokesDispatch)
+        mockWebServer!.setDispatch(dispatchMap)
+
+
         app.launchEnvironment[AppDelegate.USE_IMMEDIATE_SCHEDULERS] = "YES"
         app.launch()
 
