@@ -38,7 +38,7 @@ class MVPBlahUITests: XCTestCase {
     func testLoadedDataIsShow() {
 
         let jokesDispatch: Dispatch = Dispatch()
-        jokesDispatch.requestContain("random")
+        jokesDispatch.requestContain("jokes/random")
                 .setResponseCode(200)
                 .responseBody(for: Bundle(for: object_getClass(self)), fromFile: "jokes.json")
 
@@ -48,9 +48,13 @@ class MVPBlahUITests: XCTestCase {
 
 
         app.launchEnvironment[AppDelegate.USE_IMMEDIATE_SCHEDULERS] = "YES"
+        app.launchEnvironment[AppDelegate.USE_MOCK_WEB_SERVER] = "YES"
         app.launch()
 
-        XCTAssert(app.staticTexts["Meh"].exists)
+        XCTAssert(app.staticTexts.element(matching: NSPredicate(format: "label CONTAINS 'CNN'")).exists)
+
     }
     
+    // useful for debug:
+    // print(XCUIApplication().debugDescription)
 }

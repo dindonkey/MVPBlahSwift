@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     static let USE_IMMEDIATE_SCHEDULERS = "USE_IMMEDIATE_SCHEDULERS"
+    static let USE_MOCK_WEB_SERVER = "USE_MOCK_WEB_SERVER"
+
     var jokesRepository : JokesRepository?
     var schedulerManager : SchedulerManager?
     
@@ -27,9 +29,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         {
            schedulerManager = SchedulerManager(computation: ConcurrentDispatchQueueScheduler(qos: .default), main:MainScheduler())
         }
-        
-        jokesRepository = JokesRepository("https://api.icndb.com")
-        // https://api.icndb.com
+
+        if useMockWebServer {
+            jokesRepository = JokesRepository("http://127.0.0.1:9000")
+        }
+        else
+        {
+            jokesRepository = JokesRepository("https://api.icndb.com")
+        }
+
 
         if let firstViewController = window?.rootViewController as? ViewController {
             firstViewController.schedulerManager = schedulerManager
@@ -40,6 +48,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private var useImmediateSchedulers: Bool {
         return ProcessInfo.processInfo.environment[AppDelegate.USE_IMMEDIATE_SCHEDULERS] == "YES"
+    }
+    private var useMockWebServer: Bool {
+        return ProcessInfo.processInfo.environment[AppDelegate.USE_MOCK_WEB_SERVER] == "YES"
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

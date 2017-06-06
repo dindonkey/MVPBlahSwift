@@ -175,6 +175,7 @@
 		A964DC4A1E622974002FD56B /* MVPBlahUITests */ = {
 			isa = PBXGroup;
 			children = (
+				CD3F7CAB1EE6DCC800913C83 /* Page Objects */,
 				A964DC4B1E622974002FD56B /* MVPBlahUITests.swift */,
 				A964DC4D1E622974002FD56B /* Info.plist */,
 			);
@@ -192,6 +193,13 @@
 				7E999FCF47A43AF130DBC777 /* Pods-MVPBlahUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		CD3F7CAB1EE6DCC800913C83 /* Page Objects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Page Objects";
 			sourceTree = "<group>";
 		};
 		F087C17F36E9A13F96253FEA /* Frameworks */ = {
