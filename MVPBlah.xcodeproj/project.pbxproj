@@ -22,6 +22,7 @@
 		A9AC72E11E6386B000E19BE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A964DC2B1E622974002FD56B /* AppDelegate.swift */; };
 		BB044FDBFD7D894BDEED6D32 /* Pods_MVPBlah.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 320941562F9E7E8BA6688FDE /* Pods_MVPBlah.framework */; };
 		C93F84CB1837F4AA17998004 /* Pods_MVPBlahUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA03DC94CB670847739C352 /* Pods_MVPBlahUITests.framework */; };
+		CD3F7CAD1EE6DF2B00913C83 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3F7CAC1EE6DF2B00913C83 /* HomePage.swift */; };
 		CDD2C0601E645E2200A6083B /* JokesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD2C05F1E645E2200A6083B /* JokesRepository.swift */; };
 		D326B009202623238C367F84 /* JokesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D326B01B23A8E6E59751A02D /* JokesPresenter.swift */; };
 		D326B023F0DA442BBCE038A9 /* jokes.json in Resources */ = {isa = PBXBuildFile; fileRef = D326B1152D74F22C173EB9DF /* jokes.json */; };
@@ -84,6 +85,7 @@
 		B08AF283BB6E6706493BD38D /* Pods-MVPBlahTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVPBlahTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVPBlahTests/Pods-MVPBlahTests.release.xcconfig"; sourceTree = "<group>"; };
 		C09E53E5CF9AB467A936748A /* Pods_MVPBlahTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVPBlahTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4A5508F72362ECCF44E6D4 /* Pods-MVPBlahTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVPBlahTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVPBlahTests/Pods-MVPBlahTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CD3F7CAC1EE6DF2B00913C83 /* HomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		CDD2C05F1E645E2200A6083B /* JokesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokesRepository.swift; sourceTree = "<group>"; };
 		D326B01B23A8E6E59751A02D /* JokesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokesPresenter.swift; sourceTree = "<group>"; };
 		D326B1152D74F22C173EB9DF /* jokes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jokes.json; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 		CD3F7CAB1EE6DCC800913C83 /* Page Objects */ = {
 			isa = PBXGroup;
 			children = (
+				CD3F7CAC1EE6DF2B00913C83 /* HomePage.swift */,
 			);
 			name = "Page Objects";
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9AC72E11E6386B000E19BE2 /* AppDelegate.swift in Sources */,
+				CD3F7CAD1EE6DF2B00913C83 /* HomePage.swift in Sources */,
 				A964DC4C1E622974002FD56B /* MVPBlahUITests.swift in Sources */,
 				A93FE6A21E63103C006EF079 /* SchedulerManager.swift in Sources */,
 				D326B12796C8A896E5E9E22F /* ViewController.swift in Sources */,
