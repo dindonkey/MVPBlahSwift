@@ -12,7 +12,7 @@
 		A93FE6A11E63103C006EF079 /* SchedulerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93FE69F1E63103C006EF079 /* SchedulerManager.swift */; };
 		A93FE6A21E63103C006EF079 /* SchedulerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93FE69F1E63103C006EF079 /* SchedulerManager.swift */; };
 		A964DC2C1E622974002FD56B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A964DC2B1E622974002FD56B /* AppDelegate.swift */; };
-		A964DC2E1E622974002FD56B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A964DC2D1E622974002FD56B /* ViewController.swift */; };
+		A964DC2E1E622974002FD56B /* JokesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A964DC2D1E622974002FD56B /* JokesViewController.swift */; };
 		A964DC311E622974002FD56B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A964DC2F1E622974002FD56B /* Main.storyboard */; };
 		A964DC331E622974002FD56B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A964DC321E622974002FD56B /* Assets.xcassets */; };
 		A964DC361E622974002FD56B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A964DC341E622974002FD56B /* LaunchScreen.storyboard */; };
@@ -29,7 +29,7 @@
 		D326B050A4B7D23F24B972CF /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = D326B76F2168F39B3A28F3F4 /* Joke.swift */; };
 		D326B0ABCE80436C97612802 /* JokesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D326BA2047563472807CB0EE /* JokesView.swift */; };
 		D326B0B284CD7B38DD78746F /* JokesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD2C05F1E645E2200A6083B /* JokesRepository.swift */; };
-		D326B12796C8A896E5E9E22F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A964DC2D1E622974002FD56B /* ViewController.swift */; };
+		D326B12796C8A896E5E9E22F /* JokesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A964DC2D1E622974002FD56B /* JokesViewController.swift */; };
 		D326B313A364B656F0EFCE51 /* JokesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D326B01B23A8E6E59751A02D /* JokesPresenter.swift */; };
 		D326B4345E2FDFFC0D3E9C1B /* jokes.json in Resources */ = {isa = PBXBuildFile; fileRef = D326B1152D74F22C173EB9DF /* jokes.json */; };
 		D326B898F3E64F8D387832B0 /* JokesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D326B01B23A8E6E59751A02D /* JokesPresenter.swift */; };
@@ -41,7 +41,7 @@
 		D326BE20C1194B69972BE9F7 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D326BD7A6B7314602306942B /* Podfile */; };
 		D326BE28A4458E59BF184C67 /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = D326B76F2168F39B3A28F3F4 /* Joke.swift */; };
 		D326BE7E45D8981F61948ABE /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D326BD7A6B7314602306942B /* Podfile */; };
-		D326BE9ADB59592BC54EB8FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A964DC2D1E622974002FD56B /* ViewController.swift */; };
+		D326BE9ADB59592BC54EB8FC /* JokesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A964DC2D1E622974002FD56B /* JokesViewController.swift */; };
 		D326BFE747996CA55C7536F7 /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = D326B76F2168F39B3A28F3F4 /* Joke.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,7 +71,7 @@
 		A93FE69F1E63103C006EF079 /* SchedulerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchedulerManager.swift; sourceTree = "<group>"; };
 		A964DC281E622974002FD56B /* MVPBlah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVPBlah.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A964DC2B1E622974002FD56B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A964DC2D1E622974002FD56B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A964DC2D1E622974002FD56B /* JokesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesViewController.swift; sourceTree = "<group>"; };
 		A964DC301E622974002FD56B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A964DC321E622974002FD56B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A964DC351E622974002FD56B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				A964DC2B1E622974002FD56B /* AppDelegate.swift */,
-				A964DC2D1E622974002FD56B /* ViewController.swift */,
+				A964DC2D1E622974002FD56B /* JokesViewController.swift */,
 				A964DC2F1E622974002FD56B /* Main.storyboard */,
 				A964DC321E622974002FD56B /* Assets.xcassets */,
 				A964DC341E622974002FD56B /* LaunchScreen.storyboard */,
@@ -506,7 +506,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDD2C0601E645E2200A6083B /* JokesRepository.swift in Sources */,
-				A964DC2E1E622974002FD56B /* ViewController.swift in Sources */,
+				A964DC2E1E622974002FD56B /* JokesViewController.swift in Sources */,
 				A93FE6A01E63103C006EF079 /* SchedulerManager.swift in Sources */,
 				A964DC2C1E622974002FD56B /* AppDelegate.swift in Sources */,
 				D326B050A4B7D23F24B972CF /* Joke.swift in Sources */,
@@ -522,7 +522,7 @@
 				A9AC72E01E6386B000E19BE2 /* AppDelegate.swift in Sources */,
 				A964DC411E622974002FD56B /* MVPBlahTests.swift in Sources */,
 				A93FE6A11E63103C006EF079 /* SchedulerManager.swift in Sources */,
-				D326BE9ADB59592BC54EB8FC /* ViewController.swift in Sources */,
+				D326BE9ADB59592BC54EB8FC /* JokesViewController.swift in Sources */,
 				D326B9092384801DD178EAC8 /* JokesRepository.swift in Sources */,
 				D326BE28A4458E59BF184C67 /* Joke.swift in Sources */,
 				D326B898F3E64F8D387832B0 /* JokesPresenter.swift in Sources */,
@@ -538,7 +538,7 @@
 				CD3F7CAD1EE6DF2B00913C83 /* HomePage.swift in Sources */,
 				A964DC4C1E622974002FD56B /* MVPBlahUITests.swift in Sources */,
 				A93FE6A21E63103C006EF079 /* SchedulerManager.swift in Sources */,
-				D326B12796C8A896E5E9E22F /* ViewController.swift in Sources */,
+				D326B12796C8A896E5E9E22F /* JokesViewController.swift in Sources */,
 				D326B0B284CD7B38DD78746F /* JokesRepository.swift in Sources */,
 				D326BFE747996CA55C7536F7 /* Joke.swift in Sources */,
 				D326B009202623238C367F84 /* JokesPresenter.swift in Sources */,

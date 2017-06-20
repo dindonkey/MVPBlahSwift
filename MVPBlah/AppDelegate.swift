@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
 
-        if let firstViewController = window?.rootViewController as? ViewController {
+        if let firstViewController = window?.rootViewController as? JokesViewController {
             firstViewController.schedulerManager = schedulerManager
         }
         

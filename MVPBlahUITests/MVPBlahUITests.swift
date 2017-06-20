@@ -24,7 +24,6 @@ class MVPBlahUITests: XCTestCase {
     }
     
     func testLoadedDataIsShow() {
-        
         homePage.enqueueJsonResoponse("jokes.json")
         homePage.launch()
         homePage.checkTextIsDisplayed("CNN")

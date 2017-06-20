@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  JokesViewController.swift
 //  MVPBlah
 //
 //  Created by Simone Caldon on 25/02/2017.
@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, JokesView {
+class JokesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, JokesView {
 
     var schedulerManager: SchedulerManager?
 
