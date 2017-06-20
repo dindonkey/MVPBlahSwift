@@ -88,7 +88,7 @@
 		CD3F7CAC1EE6DF2B00913C83 /* HomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		CDD2C05F1E645E2200A6083B /* JokesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokesRepository.swift; sourceTree = "<group>"; };
 		D326B01B23A8E6E59751A02D /* JokesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokesPresenter.swift; sourceTree = "<group>"; };
-		D326B1152D74F22C173EB9DF /* jokes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jokes.json; sourceTree = "<group>"; };
+		D326B1152D74F22C173EB9DF /* jokes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = jokes.json; path = ../MVPBlah/jokes.json; sourceTree = "<group>"; };
 		D326B76F2168F39B3A28F3F4 /* Joke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
 		D326BA2047563472807CB0EE /* JokesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokesView.swift; sourceTree = "<group>"; };
 		D326BD7A6B7314602306942B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -149,18 +149,13 @@
 		A964DC2A1E622974002FD56B /* MVPBlah */ = {
 			isa = PBXGroup;
 			children = (
+				CDCB58FF1EF953A2007F0001 /* Jokes */,
+				CDCB58FE1EF95388007F0001 /* Rx */,
 				A964DC2B1E622974002FD56B /* AppDelegate.swift */,
-				A964DC2D1E622974002FD56B /* JokesViewController.swift */,
 				A964DC2F1E622974002FD56B /* Main.storyboard */,
 				A964DC321E622974002FD56B /* Assets.xcassets */,
 				A964DC341E622974002FD56B /* LaunchScreen.storyboard */,
 				A964DC371E622974002FD56B /* Info.plist */,
-				A93FE69F1E63103C006EF079 /* SchedulerManager.swift */,
-				CDD2C05F1E645E2200A6083B /* JokesRepository.swift */,
-				D326B76F2168F39B3A28F3F4 /* Joke.swift */,
-				D326B1152D74F22C173EB9DF /* jokes.json */,
-				D326B01B23A8E6E59751A02D /* JokesPresenter.swift */,
-				D326BA2047563472807CB0EE /* JokesView.swift */,
 			);
 			path = MVPBlah;
 			sourceTree = "<group>";
@@ -177,6 +172,7 @@
 		A964DC4A1E622974002FD56B /* MVPBlahUITests */ = {
 			isa = PBXGroup;
 			children = (
+				CDCB59001EF953D5007F0001 /* Assets */,
 				CD3F7CAB1EE6DCC800913C83 /* Page Objects */,
 				A964DC4B1E622974002FD56B /* MVPBlahUITests.swift */,
 				A964DC4D1E622974002FD56B /* Info.plist */,
@@ -203,6 +199,34 @@
 				CD3F7CAC1EE6DF2B00913C83 /* HomePage.swift */,
 			);
 			name = "Page Objects";
+			sourceTree = "<group>";
+		};
+		CDCB58FE1EF95388007F0001 /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				A93FE69F1E63103C006EF079 /* SchedulerManager.swift */,
+			);
+			name = Rx;
+			sourceTree = "<group>";
+		};
+		CDCB58FF1EF953A2007F0001 /* Jokes */ = {
+			isa = PBXGroup;
+			children = (
+				A964DC2D1E622974002FD56B /* JokesViewController.swift */,
+				D326BA2047563472807CB0EE /* JokesView.swift */,
+				D326B01B23A8E6E59751A02D /* JokesPresenter.swift */,
+				CDD2C05F1E645E2200A6083B /* JokesRepository.swift */,
+				D326B76F2168F39B3A28F3F4 /* Joke.swift */,
+			);
+			name = Jokes;
+			sourceTree = "<group>";
+		};
+		CDCB59001EF953D5007F0001 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				D326B1152D74F22C173EB9DF /* jokes.json */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 		F087C17F36E9A13F96253FEA /* Frameworks */ = {
