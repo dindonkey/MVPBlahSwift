@@ -1,10 +1,11 @@
 # Podfile
 use_frameworks!
+inhibit_all_warnings!
 
 target 'MVPBlah' do
   pod 'RxSwift', '~> 3.0'
   pod 'RxCocoa', '~> 3.0'
-  pod 'MockWebServer'
+  pod 'MockWebServer', :inhibit_warnings => true
 
 end
 
