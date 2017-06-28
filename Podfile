@@ -5,6 +5,8 @@ inhibit_all_warnings!
 target 'MVPBlah' do
   pod 'RxSwift', '~> 3.0'
   pod 'RxCocoa', '~> 3.0'
+  pod 'Alamofire', '~> 4.4'
+  #TODO: move to test
   pod 'MockWebServer', :inhibit_warnings => true
 
 end

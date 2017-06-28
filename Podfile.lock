@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.5.0)
   - MockWebServer (0.1.4)
   - RxBlocking (3.2.0):
     - RxSwift (~> 3.1)
@@ -9,6 +10,7 @@ PODS:
     - RxSwift (~> 3.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.4)
   - MockWebServer
   - RxBlocking (~> 3.0)
   - RxCocoa (~> 3.0)
@@ -16,12 +18,13 @@ DEPENDENCIES:
   - RxTest (~> 3.0)
 
 SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   MockWebServer: 7993c8a2a00e796619b05efaa211ee609b0c653e
   RxBlocking: ec8ed471ba77b4fb98a2d60f1f8419b0b46eaa23
   RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
   RxTest: 85fdd6f753e8e62635a58d37bbdd3ce7d5abbef3
 
-PODFILE CHECKSUM: 0a844b3cb3e72b33197bc7a1cf6f576e9ff4fced
+PODFILE CHECKSUM: 0ec8c6a2cb6ae19c94009bfc64ede20679c50e99
 
 COCOAPODS: 1.2.1
