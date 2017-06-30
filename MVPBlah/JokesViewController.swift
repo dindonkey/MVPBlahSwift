@@ -25,52 +25,13 @@ class JokesViewController: UIViewController, UITableViewDataSource, UITableViewD
         sampleTableView.delegate = self
         sampleTableView.dataSource = self
 
-//        getData()
-//        getDataFromJokesRepo()
-        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
-        let jokesPresenter = JokesPresenter(jokesRepository: appDelegate.jokesRepository!, schedulerManager: appDelegate.schedulerManager!)
+        let jokesPresenter = JokesPresenter(jokesRepository: appDelegate.jokesRepository!, schedulerManager: appDelegate.schedulerManager!, disposeBag: disposeBag)
         jokesPresenter.bindView(view: self)
-        jokesPresenter.getJokes()
+//        jokesPresenter.getJokes()
+        jokesPresenter.getJokesWithAlamo()
     }
-//
-//    func getDataFromJokesRepo() {
-//        let jokesRepository = JokesRepository()
-//
-//        jokesRepository.getJoke()
-//                .subscribeOn((schedulerManager?.computation)!)
-//                .observeOn((schedulerManager?.main)!)
-//                .subscribe(onNext: { (element) in
-//                    let respDict = element as! Dictionary<String, AnyObject>
-//                    let jokes = respDict["value"] as! Array<AnyObject>
-//
-//                    let joke = Joke(jokes.first as! Dictionary<String, AnyObject>)
-//                    self.tableData = [joke.joke]
-//                    self.sampleTableView.reloadData()
-//                })
-//                .addDisposableTo(disposeBag)
-//    }
-//
-//    func getData() {
-//
-//        let observable = Observable<String>.create { (observer) -> Disposable in
-//            Thread.sleep(forTimeInterval: 3)
-//            observer.onNext("Meh")
-//            observer.onCompleted()
-//            return Disposables.create()
-//        }
-//
-//        observable
-//                .subscribeOn((schedulerManager?.computation)!)
-//                .observeOn((schedulerManager?.main)!)
-//                .subscribe(onNext: { (element) in
-//                    self.tableData = [element]
-//                    self.sampleTableView.reloadData()
-//                })
-//                .addDisposableTo(disposeBag)
-//
-//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
