@@ -41,12 +41,11 @@ class JokesPresenter {
             .subscribeOn(schedulerManager.computation)
             .observeOn(schedulerManager.main)
             .debug()
-            .subscribe(onNext: { (r, json) in
-                let dict = json as! [String: AnyObject]
-                let jokes = dict["value"] as! Array<AnyObject>
-                let joke = Joke(jokes.first as! Dictionary<String,AnyObject>)
-                self.view!.showJokes(joke: joke)
-                
+            .subscribe(onNext: { (dataRequest) in
+                dataRequest.responseArray(keyPath: "value") { (response: DataResponse<[Joke]>) in
+                        let joke = response.result.value?.first
+                        self.view!.showJokes(joke: joke)
+                }
             })
             .addDisposableTo(disposeBag)
     }

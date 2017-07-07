@@ -10,6 +10,8 @@ import Foundation
 import RxSwift
 import RxCocoa
 import RxAlamofire
+import Alamofire
+import AlamofireObjectMapper
 
 class JokesRepository {
     
@@ -19,8 +21,8 @@ class JokesRepository {
         self.baseUrl = baseUrl
     }
     
-    func getJokeWithAlamo() -> Observable<(HTTPURLResponse, Any)> {
-        return RxAlamofire.requestJSON(.get, URL(string: baseUrl + "/jokes/random/1")!)
+    func getJokeWithAlamo() -> Observable<DataRequest> {
+        return RxAlamofire.request(.get, URL(string: baseUrl + "/jokes/random/1")!)
     }
     
     func getJoke() -> Observable<Any> {

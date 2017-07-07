@@ -4,11 +4,19 @@
 //
 
 import Foundation
+import ObjectMapper
 
-struct Joke {
-    var joke: String
-
+struct Joke: Mappable{
+    var joke: String?
+    
     init(_ dictionary: Dictionary<String, AnyObject>) {
-        joke = dictionary["joke"] as! String
+        joke = dictionary["joke"] as? String
+    }
+    
+    init?(map: Map) {
+    }
+    
+    mutating func mapping(map: Map) {
+        joke <- map["joke"]
     }
 }

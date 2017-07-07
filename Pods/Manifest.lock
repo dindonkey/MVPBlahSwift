@@ -1,6 +1,10 @@
 PODS:
   - Alamofire (4.5.0)
+  - AlamofireObjectMapper (4.1.0):
+    - Alamofire (~> 4.1)
+    - ObjectMapper (~> 2.0)
   - MockWebServer (0.1.4)
+  - ObjectMapper (2.2.7)
   - RxAlamofire (3.0.3):
     - RxAlamofire/Core (= 3.0.3)
   - RxAlamofire/Core (3.0.3):
@@ -16,6 +20,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
+  - AlamofireObjectMapper (~> 4.0)
   - MockWebServer
   - RxAlamofire
   - RxBlocking (~> 3.0)
@@ -25,13 +30,15 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  AlamofireObjectMapper: 435adc82f5b367679bd9e71c4974a54efd0b2521
   MockWebServer: 7993c8a2a00e796619b05efaa211ee609b0c653e
+  ObjectMapper: 65abcfd9a61cf7396cbd14a4fb22fddfcc46577e
   RxAlamofire: 5eb39188c4917ad98127c0ecb4878a61b7517003
   RxBlocking: ec8ed471ba77b4fb98a2d60f1f8419b0b46eaa23
   RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
   RxTest: 85fdd6f753e8e62635a58d37bbdd3ce7d5abbef3
 
-PODFILE CHECKSUM: 7af69abfe0d6f74931fdc11819e184f943d87735
+PODFILE CHECKSUM: 128fbd23f4fd7fe3f3722737481570b8c5b18bb2
 
 COCOAPODS: 1.2.1
