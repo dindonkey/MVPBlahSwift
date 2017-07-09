@@ -8,6 +8,7 @@ target 'MVPBlah' do
   pod 'Alamofire', '~> 4.4'
   pod 'RxAlamofire'
   pod 'AlamofireObjectMapper', '~> 4.0'
+  pod 'Moya/RxSwift'
   #TODO: move to test
   pod 'MockWebServer', :inhibit_warnings => true
 
@@ -22,6 +23,7 @@ target 'MVPBlahTests' do
   pod 'Alamofire', '~> 4.4'
   pod 'RxAlamofire'
   pod 'AlamofireObjectMapper', '~> 4.0'
+  pod 'Moya/RxSwift'
 end
 
 target 'MVPBlahUITests' do
@@ -32,4 +34,5 @@ target 'MVPBlahUITests' do
   pod 'Alamofire', '~> 4.4'
   pod 'RxAlamofire'
   pod 'AlamofireObjectMapper', '~> 4.0'
+  pod 'Moya/RxSwift'
 end

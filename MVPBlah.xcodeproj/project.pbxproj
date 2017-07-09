@@ -43,6 +43,9 @@
 		D326BE7E45D8981F61948ABE /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D326BD7A6B7314602306942B /* Podfile */; };
 		D326BE9ADB59592BC54EB8FC /* JokesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A964DC2D1E622974002FD56B /* JokesViewController.swift */; };
 		D326BFE747996CA55C7536F7 /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = D326B76F2168F39B3A28F3F4 /* Joke.swift */; };
+		F7B8DFF01F126CA900A1AFCF /* JokesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B8DFEF1F126CA900A1AFCF /* JokesService.swift */; };
+		F7B8DFF11F126CA900A1AFCF /* JokesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B8DFEF1F126CA900A1AFCF /* JokesService.swift */; };
+		F7B8DFF21F126CA900A1AFCF /* JokesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B8DFEF1F126CA900A1AFCF /* JokesService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +95,7 @@
 		D326B76F2168F39B3A28F3F4 /* Joke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
 		D326BA2047563472807CB0EE /* JokesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokesView.swift; sourceTree = "<group>"; };
 		D326BD7A6B7314602306942B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F7B8DFEF1F126CA900A1AFCF /* JokesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokesService.swift; sourceTree = "<group>"; };
 		FCA03DC94CB670847739C352 /* Pods_MVPBlahUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVPBlahUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -217,6 +221,7 @@
 				D326B01B23A8E6E59751A02D /* JokesPresenter.swift */,
 				CDD2C05F1E645E2200A6083B /* JokesRepository.swift */,
 				D326B76F2168F39B3A28F3F4 /* Joke.swift */,
+				F7B8DFEF1F126CA900A1AFCF /* JokesService.swift */,
 			);
 			name = Jokes;
 			sourceTree = "<group>";
@@ -531,6 +536,7 @@
 			files = (
 				CDD2C0601E645E2200A6083B /* JokesRepository.swift in Sources */,
 				A964DC2E1E622974002FD56B /* JokesViewController.swift in Sources */,
+				F7B8DFF01F126CA900A1AFCF /* JokesService.swift in Sources */,
 				A93FE6A01E63103C006EF079 /* SchedulerManager.swift in Sources */,
 				A964DC2C1E622974002FD56B /* AppDelegate.swift in Sources */,
 				D326B050A4B7D23F24B972CF /* Joke.swift in Sources */,
@@ -548,6 +554,7 @@
 				A93FE6A11E63103C006EF079 /* SchedulerManager.swift in Sources */,
 				D326BE9ADB59592BC54EB8FC /* JokesViewController.swift in Sources */,
 				D326B9092384801DD178EAC8 /* JokesRepository.swift in Sources */,
+				F7B8DFF11F126CA900A1AFCF /* JokesService.swift in Sources */,
 				D326BE28A4458E59BF184C67 /* Joke.swift in Sources */,
 				D326B898F3E64F8D387832B0 /* JokesPresenter.swift in Sources */,
 				D326B0ABCE80436C97612802 /* JokesView.swift in Sources */,
@@ -562,6 +569,7 @@
 				CD3F7CAD1EE6DF2B00913C83 /* HomePage.swift in Sources */,
 				A964DC4C1E622974002FD56B /* MVPBlahUITests.swift in Sources */,
 				A93FE6A21E63103C006EF079 /* SchedulerManager.swift in Sources */,
+				F7B8DFF21F126CA900A1AFCF /* JokesService.swift in Sources */,
 				D326B12796C8A896E5E9E22F /* JokesViewController.swift in Sources */,
 				D326B0B284CD7B38DD78746F /* JokesRepository.swift in Sources */,
 				D326BFE747996CA55C7536F7 /* Joke.swift in Sources */,
