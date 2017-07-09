@@ -7,6 +7,8 @@ import Foundation
 import RxSwift
 import Alamofire
 import RxAlamofire
+import Moya
+import Moya_ModelMapper
 
 class JokesPresenter {
     
@@ -36,18 +38,37 @@ class JokesPresenter {
             .addDisposableTo(disposeBag)
     }
     
-    func getJokesWithAlamo() {
-        jokesRepository.getJokeWithAlamo()
-            .subscribeOn(schedulerManager.computation)
-            .observeOn(schedulerManager.main)
-            .debug()
-            .subscribe(onNext: { (dataRequest) in
-                dataRequest.responseArray(keyPath: "value") { (response: DataResponse<[Joke]>) in
-                        let joke = response.result.value?.first
-                        self.view!.showJokes(joke: joke)
+//    func getJokesWithAlamo() {
+//        jokesRepository.getJokeWithAlamo()
+//            .subscribeOn(schedulerManager.computation)
+//            .observeOn(schedulerManager.main)
+//            .debug()
+//            .subscribe(onNext: { (dataRequest) in
+//                dataRequest.responseArray(keyPath: "value") { (response: DataResponse<[Joke]>) in
+//                    let joke = response.result.value?.first
+//                    self.view!.showJokes(joke: joke)
+//                }
+//            })
+//            .addDisposableTo(disposeBag)
+//    }
+    
+    func getJokesWithMoya() {
+        let jokesProvider = MoyaProvider<JokesService>()
+        jokesProvider.request(.random) { result in
+            switch result {
+            case let .success(response):
+                // do catch seems mandatory because mapArray is throwing exception
+                do {
+                    let jokes = try response.mapArray(withKeyPath: "value") as [Joke]
+                    self.view!.showJokes(joke: jokes.first)
                 }
-            })
-            .addDisposableTo(disposeBag)
+                catch {
+                    print(error)
+                }
+            case let .failure(error):
+                print(error)
+            }
+        }
     }
     
     func bindView(view: JokesView) {

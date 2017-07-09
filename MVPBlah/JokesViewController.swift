@@ -30,7 +30,8 @@ class JokesViewController: UIViewController, UITableViewDataSource, UITableViewD
         let jokesPresenter = JokesPresenter(jokesRepository: appDelegate.jokesRepository!, schedulerManager: appDelegate.schedulerManager!, disposeBag: disposeBag)
         jokesPresenter.bindView(view: self)
         //        jokesPresenter.getJokes()
-        jokesPresenter.getJokesWithAlamo()
+//        jokesPresenter.getJokesWithAlamo()
+        jokesPresenter.getJokesWithMoya()
     }
     
     override func didReceiveMemoryWarning() {

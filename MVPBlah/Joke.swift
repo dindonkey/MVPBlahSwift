@@ -4,7 +4,7 @@
 //
 
 import Foundation
-import ObjectMapper
+import Mapper
 
 struct Joke: Mappable{
     var joke: String?
@@ -13,10 +13,8 @@ struct Joke: Mappable{
         joke = dictionary["joke"] as? String
     }
     
-    init?(map: Map) {
+    init(map: Mapper) throws {
+        joke = map.optionalFrom("joke")
     }
-    
-    mutating func mapping(map: Map) {
-        joke <- map["joke"]
-    }
+   
 }
