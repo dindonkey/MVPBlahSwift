@@ -71,6 +71,17 @@ class JokesPresenter {
         }
     }
     
+    func getJokesWithMoyaRx() {
+        let jokesProvider = RxMoyaProvider<JokesService>()
+        jokesProvider
+            .request(.random)
+            .mapArray(type: Joke.self, keyPath: "value")
+            .subscribe(onNext: { (jokes) in
+                self.view!.showJokes(joke: jokes.first)
+            })
+            .addDisposableTo(disposeBag)
+    }
+    
     func bindView(view: JokesView) {
         self.view = view
     }

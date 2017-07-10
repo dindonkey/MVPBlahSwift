@@ -31,7 +31,8 @@ class JokesViewController: UIViewController, UITableViewDataSource, UITableViewD
         jokesPresenter.bindView(view: self)
         //        jokesPresenter.getJokes()
 //        jokesPresenter.getJokesWithAlamo()
-        jokesPresenter.getJokesWithMoya()
+//        jokesPresenter.getJokesWithMoya()
+        jokesPresenter.getJokesWithMoyaRx()
     }
     
     override func didReceiveMemoryWarning() {
