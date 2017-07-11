@@ -12,13 +12,17 @@ import RxCocoa
 import RxAlamofire
 import Alamofire
 import AlamofireObjectMapper
+import Moya
+import Moya_ModelMapper
 
 class JokesRepository {
     
     var baseUrl : String
+    let jokesProvider: RxMoyaProvider<JokesService>
     
-    init(_ baseUrl: String) {
+    init(baseUrl: String, jokesProvider: RxMoyaProvider<JokesService>) {
         self.baseUrl = baseUrl
+        self.jokesProvider = jokesProvider
     }
     
     func getJokeWithAlamo() -> Observable<DataRequest> {
@@ -28,6 +32,12 @@ class JokesRepository {
     func getJoke() -> Observable<Any> {
         Thread.sleep(forTimeInterval: 3)
         return URLSession.shared.rx.json(url: URL(string: baseUrl + "/jokes/random/1")!)
+    }
+    
+    func getJokes() -> Observable<[Joke]> {
+        return jokesProvider
+            .request(.random)
+            .mapArray(type: Joke.self, keyPath: "value")
     }
     
 }

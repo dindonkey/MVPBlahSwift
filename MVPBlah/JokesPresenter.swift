@@ -16,12 +16,12 @@ class JokesPresenter {
     let schedulerManager: SchedulerManager
     var view: JokesView?
     let disposeBag : DisposeBag
-    let jokesProvider: RxMoyaProvider<JokesService>
     
-    init(jokesRepository: JokesRepository, jokesProvider: RxMoyaProvider<JokesService>,  schedulerManager: SchedulerManager, disposeBag: DisposeBag)
+    init(jokesRepository: JokesRepository,
+         schedulerManager: SchedulerManager,
+         disposeBag: DisposeBag)
     {
         self.jokesRepository = jokesRepository
-        self.jokesProvider = jokesProvider
         self.schedulerManager = schedulerManager
         self.disposeBag = disposeBag
     }
@@ -74,9 +74,8 @@ class JokesPresenter {
     }
     
     func getJokesWithMoyaRx() {
-        jokesProvider
-            .request(.random)
-            .mapArray(type: Joke.self, keyPath: "value")
+        jokesRepository
+            .getJokes()
             .subscribe(onNext: { (jokes) in
                 self.view!.showJokes(joke: jokes.first)
             })
