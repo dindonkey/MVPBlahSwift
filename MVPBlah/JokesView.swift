@@ -6,5 +6,5 @@
 import Foundation
 
 protocol JokesView {
-    func showJokes(joke: Joke?)
+    func showJokes(_ : [Joke])
 }

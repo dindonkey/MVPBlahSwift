@@ -35,7 +35,7 @@ class JokesPresenter {
                 let jokes = respDict["value"] as! Array<AnyObject>
                 
                 let joke = Joke(jokes.first as! Dictionary<String,AnyObject>)
-                self.view!.showJokes(joke: joke)
+                self.view!.showJokes([joke])
             })
             .addDisposableTo(disposeBag)
     }
@@ -62,7 +62,7 @@ class JokesPresenter {
                 // do catch seems mandatory because mapArray is throwing exception
                 do {
                     let jokes = try response.mapArray(withKeyPath: "value") as [Joke]
-                    self.view!.showJokes(joke: jokes.first)
+                    self.view!.showJokes(jokes)
                 }
                 catch {
                     print(error)
@@ -77,7 +77,7 @@ class JokesPresenter {
         jokesRepository
             .getJokes()
             .subscribe(onNext: { (jokes) in
-                self.view!.showJokes(joke: jokes.first)
+                self.view!.showJokes(jokes)
             })
             .addDisposableTo(disposeBag)
     }

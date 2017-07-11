@@ -17,7 +17,7 @@ class JokesViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet var sampleTableView: UITableView!
     
     let textCellIdentifier = "TextCell"
-    var tableData = ["loading"]
+    var tableData = [Joke]()
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -33,8 +33,8 @@ class JokesViewController: UIViewController, UITableViewDataSource, UITableViewD
                                             disposeBag: disposeBag)
         jokesPresenter.bindView(view: self)
         //        jokesPresenter.getJokes()
-//        jokesPresenter.getJokesWithAlamo()
-//        jokesPresenter.getJokesWithMoya()
+        //        jokesPresenter.getJokesWithAlamo()
+        //        jokesPresenter.getJokesWithMoya()
         jokesPresenter.getJokesWithMoyaRx()
     }
     
@@ -52,16 +52,15 @@ class JokesViewController: UIViewController, UITableViewDataSource, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath as IndexPath)
         
         let row = indexPath.row
-        cell.textLabel?.text = tableData[row]
+        cell.textLabel?.text = tableData[row].joke
         
         return cell
     }
     
-    func showJokes(joke: Joke?) {
-        if let joke = joke?.joke {
-            self.tableData = [joke]
-            self.sampleTableView.reloadData()
-        }
+    func showJokes(_ jokes: [Joke]) {
+        self.tableData = jokes
+        self.sampleTableView.reloadData()
+        
     }
     
     
