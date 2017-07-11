@@ -36,7 +36,7 @@ class JokesRepository {
     
     func getJokes() -> Observable<[Joke]> {
         return jokesProvider
-            .request(.random)
+            .request(.random(numJokes: 5))
             .mapArray(type: Joke.self, keyPath: "value")
     }
     

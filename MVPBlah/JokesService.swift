@@ -2,7 +2,7 @@ import Foundation
 import Moya
 
 enum JokesService {
-    case random
+    case random(numJokes: Int)
 }
 
 extension JokesService: TargetType {
@@ -10,8 +10,8 @@ extension JokesService: TargetType {
     
     var path: String {
         switch self {
-        case .random:
-            return "jokes/random/1"
+        case .random(let numJokes):
+            return "jokes/random/\(numJokes)"
         }
     }
     

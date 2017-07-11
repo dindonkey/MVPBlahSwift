@@ -56,7 +56,7 @@ class JokesPresenter {
     
     func getJokesWithMoya() {
         let jokesProvider = MoyaProvider<JokesService>()
-        jokesProvider.request(.random) { result in
+        jokesProvider.request(.random(numJokes: 5)) { result in
             switch result {
             case let .success(response):
                 // do catch seems mandatory because mapArray is throwing exception
