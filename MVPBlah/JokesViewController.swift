@@ -8,10 +8,12 @@
 
 import UIKit
 import RxSwift
+import Moya
 
 class JokesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, JokesView {
     
     var schedulerManager: SchedulerManager?
+    var jokesProvider: RxMoyaProvider<JokesService>!
     
     @IBOutlet var sampleTableView: UITableView!
     
@@ -27,7 +29,7 @@ class JokesViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
-        let jokesPresenter = JokesPresenter(jokesRepository: appDelegate.jokesRepository!, schedulerManager: appDelegate.schedulerManager!, disposeBag: disposeBag)
+        let jokesPresenter = JokesPresenter(jokesRepository: appDelegate.jokesRepository!, jokesProvider: jokesProvider, schedulerManager: appDelegate.schedulerManager!, disposeBag: disposeBag)
         jokesPresenter.bindView(view: self)
         //        jokesPresenter.getJokes()
 //        jokesPresenter.getJokesWithAlamo()

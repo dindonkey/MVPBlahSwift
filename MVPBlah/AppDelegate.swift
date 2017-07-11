@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import MockWebServer
+import Moya
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var jokesRepository : JokesRepository?
     var schedulerManager : SchedulerManager?
+    var jokesProvider: RxMoyaProvider<JokesService>!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
@@ -32,15 +34,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         if useMockWebServer {
             jokesRepository = JokesRepository("http://127.0.0.1:9000")
+            jokesProvider = RxMoyaProvider<JokesService>(stubClosure: MoyaProvider.immediatelyStub)
         }
         else
         {
             jokesRepository = JokesRepository("https://api.icndb.com")
+            jokesProvider = RxMoyaProvider<JokesService>()
         }
 
 
         if let firstViewController = window?.rootViewController as? JokesViewController {
             firstViewController.schedulerManager = schedulerManager
+            firstViewController.jokesProvider = jokesProvider
         }
         
         return true
