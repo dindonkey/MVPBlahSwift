@@ -8,33 +8,36 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 import Moya
 
-class JokesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, JokesView {
+class JokesViewController: UIViewController, JokesView {
     
     var schedulerManager: SchedulerManager?
     
     @IBOutlet var sampleTableView: UITableView!
     
     let textCellIdentifier = "TextCell"
-    var tableData = [Joke]()
+    var tableData = Variable<[Joke]>([])
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        sampleTableView.delegate = self
-        sampleTableView.dataSource = self
-        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
         let jokesPresenter = JokesPresenter(jokesRepository: appDelegate.jokesRepository!,
                                             schedulerManager: appDelegate.schedulerManager!,
                                             disposeBag: disposeBag)
         jokesPresenter.bindView(view: self)
-        //        jokesPresenter.getJokes()
-        //        jokesPresenter.getJokesWithAlamo()
-        //        jokesPresenter.getJokesWithMoya()
+        
+        tableData
+            .asObservable()
+            .bindTo(sampleTableView.rx.items(cellIdentifier: textCellIdentifier, cellType: UITableViewCell.self))
+            { (row, element, cell) in
+                let joke = element as Joke
+                cell.textLabel?.text = joke.joke
+            }
+            .addDisposableTo(disposeBag)
+        
         jokesPresenter.getJokesWithMoyaRx()
     }
     
@@ -43,24 +46,8 @@ class JokesViewController: UIViewController, UITableViewDataSource, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableData.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath as IndexPath)
-        
-        let row = indexPath.row
-        cell.textLabel?.text = tableData[row].joke
-        
-        return cell
-    }
-    
     func showJokes(_ jokes: [Joke]) {
-        self.tableData = jokes
-        self.sampleTableView.reloadData()
-        
+        self.tableData.value = jokes
     }
     
     

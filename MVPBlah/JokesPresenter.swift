@@ -26,19 +26,32 @@ class JokesPresenter {
         self.disposeBag = disposeBag
     }
     
-    func getJokes() {
-        jokesRepository.getJoke()
-            .subscribeOn(schedulerManager.computation)
-            .observeOn(schedulerManager.main)
-            .subscribe(onNext: { (element) in
-                let respDict = element as! Dictionary<String, AnyObject>
-                let jokes = respDict["value"] as! Array<AnyObject>
-                
-                let joke = Joke(jokes.first as! Dictionary<String,AnyObject>)
-                self.view!.showJokes([joke])
+    func getJokesWithMoyaRx() {
+        jokesRepository
+            .getJokes()
+            .subscribe(onNext: { (jokes) in
+                self.view!.showJokes(jokes)
             })
             .addDisposableTo(disposeBag)
     }
+    
+    func bindView(view: JokesView) {
+        self.view = view
+    }
+    
+//    func getJokes() {
+//        jokesRepository.getJoke()
+//            .subscribeOn(schedulerManager.computation)
+//            .observeOn(schedulerManager.main)
+//            .subscribe(onNext: { (element) in
+//                let respDict = element as! Dictionary<String, AnyObject>
+//                let jokes = respDict["value"] as! Array<AnyObject>
+//                
+//                let joke = Joke(jokes.first as! Dictionary<String,AnyObject>)
+//                self.view!.showJokes([joke])
+//            })
+//            .addDisposableTo(disposeBag)
+//    }
     
 //    func getJokesWithAlamo() {
 //        jokesRepository.getJokeWithAlamo()
@@ -54,37 +67,25 @@ class JokesPresenter {
 //            .addDisposableTo(disposeBag)
 //    }
     
-    func getJokesWithMoya() {
-        let jokesProvider = MoyaProvider<JokesService>()
-        jokesProvider.request(.random(numJokes: 5)) { result in
-            switch result {
-            case let .success(response):
-                // do catch seems mandatory because mapArray is throwing exception
-                do {
-                    let jokes = try response.mapArray(withKeyPath: "value") as [Joke]
-                    self.view!.showJokes(jokes)
-                }
-                catch {
-                    print(error)
-                }
-            case let .failure(error):
-                print(error)
-            }
-        }
-    }
+//    func getJokesWithMoya() {
+//        let jokesProvider = MoyaProvider<JokesService>()
+//        jokesProvider.request(.random(numJokes: 5)) { result in
+//            switch result {
+//            case let .success(response):
+//                // do catch seems mandatory because mapArray is throwing exception
+//                do {
+//                    let jokes = try response.mapArray(withKeyPath: "value") as [Joke]
+//                    self.view!.showJokes(jokes)
+//                }
+//                catch {
+//                    print(error)
+//                }
+//            case let .failure(error):
+//                print(error)
+//            }
+//        }
+//    }
     
-    func getJokesWithMoyaRx() {
-        jokesRepository
-            .getJokes()
-            .subscribe(onNext: { (jokes) in
-                self.view!.showJokes(jokes)
-            })
-            .addDisposableTo(disposeBag)
-    }
-    
-    func bindView(view: JokesView) {
-        self.view = view
-    }
     //
     //    func unbindView() {
     //        self.view = nil
