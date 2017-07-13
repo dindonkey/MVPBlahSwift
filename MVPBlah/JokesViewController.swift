@@ -30,9 +30,7 @@ class JokesViewController: UIViewController, JokesView {
         
         jokes
             .asObservable()
-            .bindTo(jokesTableView.rx.items(cellIdentifier: "JokeCell"))
-            { (row, element, cell) in
-                let joke = element as Joke
+            .bindTo(jokesTableView.rx.items(cellIdentifier: "JokeCell")){ (_, joke, cell) in
                 cell.textLabel?.text = joke.joke
             }
             .addDisposableTo(disposeBag)
