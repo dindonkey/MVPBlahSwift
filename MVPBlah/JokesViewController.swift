@@ -15,10 +15,9 @@ class JokesViewController: UIViewController, JokesView {
     
     var schedulerManager: SchedulerManager?
     
-    @IBOutlet var sampleTableView: UITableView!
+    @IBOutlet var jokesTableView: UITableView!
     
-    let textCellIdentifier = "TextCell"
-    var tableData = Variable<[Joke]>([])
+    var jokes = Variable<[Joke]>([]) //Variable is required?
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -29,9 +28,9 @@ class JokesViewController: UIViewController, JokesView {
                                             disposeBag: disposeBag)
         jokesPresenter.bindView(view: self)
         
-        tableData
+        jokes
             .asObservable()
-            .bindTo(sampleTableView.rx.items(cellIdentifier: textCellIdentifier, cellType: UITableViewCell.self))
+            .bindTo(jokesTableView.rx.items(cellIdentifier: "JokeCell"))
             { (row, element, cell) in
                 let joke = element as Joke
                 cell.textLabel?.text = joke.joke
@@ -47,7 +46,7 @@ class JokesViewController: UIViewController, JokesView {
     }
     
     func showJokes(_ jokes: [Joke]) {
-        self.tableData.value = jokes
+        self.jokes.value = jokes
     }
     
     
